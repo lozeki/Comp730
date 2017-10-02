@@ -11,6 +11,9 @@ public class TextState {
 	public TextState(String t) {
 		text = t;
 	}
+	public List<TextListener> getObservers() {
+		return observers;
+	}
 	public String getText() {
 	    return text;
 	}    

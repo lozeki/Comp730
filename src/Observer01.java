@@ -16,6 +16,13 @@ public class Observer01 implements TextListener{
 	public void display() {
 		System.out.println("Observer01 is waiting for TextState notifications");
 	}
+	public void registered(boolean b) {
+		if (b==true) {
+			System.out.println("Observer01 is registered");
+		}else {
+			System.out.println("Observer01 is not registered for notifications");
+		}
+	}
 	public void upDate(TextState textState) {
 		data = textState.text;
 	}	
