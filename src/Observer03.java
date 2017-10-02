@@ -23,8 +23,26 @@ public class Observer03 implements TextListener{
 			System.out.println("Observer03 is not registered for notifications");
 		}
 	}
+	public void print() {
+		System.out.println("Observer03 : " +data +" ,count = " +count);
+	}
 	public void upDate(TextState textState) {
-		data = textState.text;
+		String s = "";  // temp for vowels string
+		int c = 0;					// temp for count
+		for (int i = 0; i < textState.text.toLowerCase().length(); ++i) {
+			if ("1234567890".contains(""+textState.text.toLowerCase().charAt(i)))
+			{
+				c++;
+				s += textState.text.charAt(i);
+			}
+		}
+		data = s;
+		count = c;
+	}	
+	public boolean checkText(TextState textState) {
+		this.upDate(textState); // update then print out the result
+		this.print();
+		return false;
 	}	
 }
  
